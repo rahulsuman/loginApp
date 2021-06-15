@@ -1,0 +1,29 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+ h3.panel-title{
+      text-align:center;
+      }
+      .panel-default{
+      margin-top: 40%
+      }
+      .panel-heading{
+        background-color: #fff !important;
+      }
+      .subsc{
+        text-align:center;
+        padding : 8px;
+      }
+      #pwdmsg{
+        margin-left: 27%;
+        display : none ;
+      }
+      #terms{
+        margin-top : 10%;
+        text-align: center;
+      }

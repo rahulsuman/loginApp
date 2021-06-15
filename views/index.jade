@@ -1,0 +1,53 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    title= title
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+
+    script(type='text/javascript').
+     function validate() { 
+        var len =document.getElementById("password").value.length; 
+        if(len < 8) {
+          document.getElementById("pwdmsg").style.display = 'inline'
+          document.getElementById("pwdmsg").innerHTML = "At least 8 characters"
+        }
+        else{
+          document.getElementById("pwdmsg").style.display = 'none'
+          document.getElementById("pwdmsg").innerHTML = ""
+        }
+     };
+  body
+    .container
+      .row.centered-form
+        .col-xs-12.col-sm-8.col-md-4.col-sm-offset-2.col-md-offset-4
+          .panel.panel-default
+            .panel-heading
+              h3.panel-title
+                | Sign up
+            .panel-body
+              form(action='/signup', method='post')
+                .row
+                  .col-xs-6.col-sm-6.col-md-6
+                    .form-group
+                      input#first_name.form-control.input-sm(type='text' name='firstName' placeholder='First Name' required)
+                  .col-xs-6.col-sm-6.col-md-6
+                    .form-group
+                      input#last_name.form-control.input-sm(type='text' name='lastName' placeholder='Last Name' required)
+                .form-group
+                  input#email.form-control.input-sm(type='email' name='email' placeholder='Email Address' required)
+                  .form-group
+                  input#password.form-control.input-sm(type='password' name='password' placeholder='Password' onfocusout='validate()' required)
+                  .form-group
+                  p#pwdmsg 
+                  .form-group
+                  input#phone.form-control.input-sm(type='number' name='phone' placeholder='Phone number')
+                  .form-group.subsc
+                    input#subscribe(type='checkbox' name='subscribe')
+                    | Subscribe to our newsletter
+                 button.btn.btn-info.btn-block(type='submit') SIGN UP
+              p#terms
+                | By clicking sign up you agree to our 
+                a terms of service    
